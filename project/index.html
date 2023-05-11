@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Hangman</title>
+    <link rel="stylesheet" href="hangman.css">
+    <link rel="stylesheet" href="https://mitchum.blog/wp-content/uploads/2019/05/favicon.png">
+
+</head>
+<body>
+<main>
+    <h1>Hangman game project -by Shay</h1>
+    <h5>
+        <a href="https://mitchum.blog/how-to-build-hangman-with-javascript/">Back to Blog</a>
+    </h5>
+    <div id="gallows">
+        <img style="padding-left: 70px" id="hangmanImage" src="img/hangman0.png">
+    </div>
+    <div id="word">___ ____</div>
+    <br>
+    <div id="controls">
+        <input type="text" id="guessBox" class>
+        <button id="guessWordButton" class="button" onclick="guessWord( game )">Guess Word</button>
+        <button id="newGameButton" class="button" onclick="newGame();">New Game</button>
+        <br>
+        <br>
+        <form action="https://mitchum.blog/sorry-for-offending-subscribe">
+            <button class="button">How Dare You Make Light Of Capital Punishment</button>
+        </form>
+    </div>
+    <br>
+    <div id="guesses">
+        <span class="guess">A</span>
+        <span class="guess">B</span>
+        <span class="guess">C</span>
+        <span class="guess">D</span>
+        <span class="guess">E</span>
+        <span class="guess">F</span>
+        <span class="guess">G</span>
+        <span class="guess">H</span>
+        <span class="guess">I</span>
+        <span class="guess">G</span>
+        <span class="guess">K</span>
+        <span class="guess">L</span>
+        <span class="guess">M</span>
+        <span class="guess">N</span>
+        <span class="guess">O</span>
+        <span class="guess">P</span>
+        <span class="guess">Q</span>
+        <span class="guess">R</span>
+        <span class="guess">S</span>
+        <span class="guess">T</span>
+        <span class="guess">U</span>
+        <span class="guess">V</span>
+        <span class="guess">W</span>
+        <span class="guess">X</span>
+        <span class="guess">Y</span>
+        <span class="guess">Z</span>
+    </div>
+</main>
+<script src="hangman.js"></script>
+</body>
+</html>
