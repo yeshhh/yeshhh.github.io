@@ -1,0 +1,35 @@
+body {
+    background-color: #63ffa9;
+}
+table{
+    width: 600px;
+    background-color: rgb(95, 228, 112);
+
+}
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+    text-align: center;
+
+  }
+  caption {
+    color: white;
+    font-size: 18px;
+    display: table-caption;
+    caption-side: bottom;
+    text-align: center;
+}
+
+#pic {
+    width: 200px;
+    height: 150px;
+    padding: 10px solid black;
+    border: 3px solid blue;
+}
+h1 {
+    color: white;
+    font-size: 24px;
+
+    margin-bottom: 20px;
+    text-align: left;
+}
