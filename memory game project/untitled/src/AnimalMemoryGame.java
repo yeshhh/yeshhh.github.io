@@ -50,6 +50,8 @@ public class AnimalMemoryGame {
     public void playGame() {
         Scanner scanner = new Scanner(System.in);
         String[] board = new String[gridSize * gridSize];
+        int firstPosition = -1;
+        boolean isMatched = false;
 
         while (pairsFound < gridSize * gridSize / 2) {
             displayBoard(board);
@@ -77,18 +79,28 @@ public class AnimalMemoryGame {
                     continue;
                 }
 
-                String card = cards.get(position);
-                board[position] = card;
-                cardFlips++;
-
-                displayBoard(board);
-
-                if (checkMatch(board)) {
-                    System.out.println("You found a pair!");
-                    pairsFound++;
+                if (firstPosition == -1) {
+                    firstPosition = position;
+                    board[firstPosition] = cards.get(firstPosition);
+                    cardFlips++;
                 } else {
-                    System.out.println("Not a pair. Try again.");
-                    board[position] = null;
+                    displayBoard(board);
+                    isMatched = cards.get(firstPosition).equals(cards.get(position));
+
+                    if (isMatched) {
+                        System.out.println("You found a pair!");
+                        pairsFound++;
+                        cardFlips++; // Increment the card flips count
+                    } else {
+                        System.out.println("Not a pair. Try again.");
+                        board[firstPosition] = null; // Reset the first card position
+                    }
+
+                    board[firstPosition] = cards.get(firstPosition);
+                    board[position] = cards.get(position);
+                    cardFlips++; // Increment the card flips count
+
+                    firstPosition = -1; // Reset the first card position
                 }
             } catch (NumberFormatException e) {
                 System.out.println("Invalid input. Try again.");
@@ -112,22 +124,6 @@ public class AnimalMemoryGame {
             }
         }
         System.out.println();
-    }
-
-    private boolean checkMatch(String[] board) {
-        String card1 = null;
-        for (String card : board) {
-            if (card != null) {
-                if (card1 == null) {
-                    card1 = card;
-                } else {
-                    if (!card.equals(card1)) {
-                        return false;
-                    }
-                }
-            }
-        }
-        return true;
     }
 
     public static void main(String[] args) {
